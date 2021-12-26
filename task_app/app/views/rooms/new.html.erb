@@ -1,0 +1,25 @@
+<div class = "form-new">
+  <h3 class = "form-h3">ルーム情報登録</h3>
+  <div class = "form-error">
+    <ul>
+      <% @room.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%= form_with url: "/rooms", multipart: true do %>
+    <div class = "form">
+      <p>ルーム名</p>
+      <input name = "name" placeholder = "ルーム名" value = "<%= @room.name %>">
+      <p>ルーム紹介</p>
+      <textarea name = "appeal"  placeholder = "ルーム説明を入力"><%= @room.appeal %></textarea>
+      <p>料金</p>
+      <input name = "money" placeholder = "1日あたりの料金" value = "<%= @room.money %>">
+      <p>住所</p>
+      <input name = "address" placeholder = "住所を入力" value = "<%= @room.address %>">
+      <p>ルーム画像</p>
+      <input name = "image" placeholder = "ルーム画像"  type = "file">
+      <input class = "form-button" type = "submit" value = "ルーム情報を登録">
+    </div>
+  <% end %>
+</div>

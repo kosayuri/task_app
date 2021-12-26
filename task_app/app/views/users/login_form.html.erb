@@ -1,0 +1,20 @@
+<div class = "form-new">
+    <h3 class = "form-h3">ログイン</h3>
+    <div class = "form-error">
+        <ul>
+            <% if @error_message %>
+                <li><%= @error_message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <%= form_with url: "/users/login" do %>
+        <div class = "form">
+            <p>メールアドレス</p>
+            <input name = "email" placeholder = "メールアドレス" value = "<%= @email %>">
+            <p>パスワード</p>
+            <input name = "password" type = "password" placeholder = "パスワード" value = "<%= @password %>">
+            <input class = "form-button" type = "submit" value = "ログイン">
+            <%= link_to("新しいアカウントを作成","/users/new") %>
+        </div>
+    <% end %>
+</div>

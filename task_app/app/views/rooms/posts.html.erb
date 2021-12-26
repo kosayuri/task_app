@@ -1,0 +1,25 @@
+<h3 class = "histroy-h3">登録済みルーム一覧</h3>
+<div class = "histroy">
+    <table>
+        <thead>
+            <tr>
+            <th>ルーム画像</th>
+            <th>ルーム名</th>
+            <th>ルーム紹介</th>
+            <th>料金</th>
+            <th>作成日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @room.each do |room| %>
+                <tr>
+                    <td><%= link_to("/rooms/show/#{room.id}") do %><img src="<%= "/room_images/#{room.image}" %>"><% end %></td>
+                    <td><%= link_to("/rooms/show/#{room.id}") do %><%= room .name %><% end %></td>
+                    <td><%= room .appeal %></td>
+                    <td><%= room .money %></td>
+                    <td><%= room.created_at.to_s(:datetime_to_s) %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

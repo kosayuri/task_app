@@ -1,0 +1,27 @@
+<div class = "form-new">
+    <h3 class = "form-h3">新しいアカウントを作成</h3>
+    <div class = "form-error">
+        <ul>
+            <% @user.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+            <% if @error_message %>
+                <li><%= @error_message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <%= form_with model: @user do %>
+        <div class = "form">
+            <p>ユーザー名前</p>
+            <input name = "name" placeholder = "ユーザー名" value = "<%= @user.name %>">
+            <p>メールアドレス</p>
+            <input name = "email" placeholder = "メールアドレス" value = "<%= @user.email %>">
+            <p>パスワード</p>
+            <input name = "password" type = "password" placeholder = "パスワード" value = "<%= @user.password %>">
+            <p>パスワード確認</p>
+            <input name = "password_confirmation" type = "password" placeholder = "パスワード確認" value = "<%= @password_confirmation %>">
+            <input class = "form-button" type = "submit" value = "新しいアカウントを作成">
+            <%= link_to("すでにアカウントをお持ちの方はログイン","/users/login_form") %>
+        </div>
+    <% end %>
+</div>

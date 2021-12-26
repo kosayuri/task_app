@@ -1,0 +1,139 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.rooms-index-h3{
+    margin: 20px;
+}
+
+.rooms-index-room{
+    width: 20%;
+    height: 250px;
+    background-color: rgb(155, 155, 155);
+    margin: 10px 10px;
+    display: inline-block;
+}
+
+.rooms-index-room a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.rooms-index-room p{
+    padding:0 5px;
+}
+
+.rooms-index-room img {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    height: 130px;
+}
+
+.rooms-index-money{
+    text-align: right;
+}
+
+.rooms-index{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-h3{
+    margin: 20px 0;
+}
+
+.form-new{
+    margin: 0 20px;
+}
+
+.form-error{
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.form input{
+    height: 30px;
+}
+
+.form textarea{
+    height: 80px;
+}
+
+.form-button{
+    margin-top: 10px;
+    background-color: rgb(68, 183, 236);
+}
+
+.rooms-show-room{
+    width: 700px;
+    background-color: rgb(170, 170, 170);
+}
+
+.rooms-show-room-icon{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    height: 300px;
+
+}
+
+.rooms-show-user-icon{
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.div-rooms-show-user-icon{
+    width: fit-content;
+    display: inline-block;
+}
+
+.rooms-show-money{
+    padding: 0 10px;
+    margin-top: 40px;
+}
+
+.rooms-show-appeal{
+    padding: 0 10px;
+    margin: 10px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+.rooms-show{
+    margin: 30px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.rooms-show-form{
+    width: 450px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: 2px solid #333;
+}
+
+.rooms-show-form input{
+    height: 30px;
+    width: 100%;
+}
+
+.rooms-show-link{
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgb(68, 183, 236);
+    border-radius: 5px;
+    display: block;
+}
+
+.rooms-show-name{
+    padding-top: 15px;
+}

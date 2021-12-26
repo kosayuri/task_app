@@ -1,0 +1,33 @@
+// Place all the styles related to the histroys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.histroy{
+    display: flex;
+    justify-content: center;
+}
+
+.histroy img{
+    width: auto;
+    height: 130px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th{
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    width: 110px;
+    padding: 5px;
+}
+
+tr{
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    text-align: center;
+}
+
+.histroy-h3{
+    padding: 20px;
+}

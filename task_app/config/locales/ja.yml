@@ -1,0 +1,23 @@
+ja:
+      activerecord:
+        models:
+          user: ユーザー
+          room: ルーム
+          histroys: 履歴
+        attributes:
+          user:
+            name: 名前
+            email: メールアドレス
+            password: パスワード
+          room:
+            name: 名前
+            introduction: 説明
+            money: 使用料金
+            address: 住所
+            user_id: ユーザーID
+          histroy:
+            user_id: ユーザーid
+            room_id: ルームid
+            start_day: 開始日
+            end_day: 終了日
+            count: 人数
