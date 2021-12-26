@@ -1,0 +1,35 @@
+<div class = "rooms-show">
+    <div class = "rooms-show-room">
+        <img class = "rooms-show-room-icon" src="<%= "/room_images/#{@room.image}" %>">
+        <img class = "rooms-show-user-icon" src="<%= "/user_images/#{@user.image}" %>" align="left">
+        <p class = "rooms-show-name">ルーム名：<%= @room.name %></p>
+        <p>住所：<%= @room.address %></p>
+        <p class = "rooms-show-money">¥<%= @room.money %>/日</p>
+        <div>
+            <p class = "rooms-show-appeal"><%= @room.appeal %></p>
+        </div>
+    </div>
+    <div class = "rooms-show-form">
+        <% if @current_user !=nil %>
+            <%= form_with url: "/histroys" do%>
+                <div>
+                    <ul>
+                    <% @histroy.errors.full_messages.each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                    </ul>
+                </div>
+                <p>開始日</p>
+                <input type = "date" name="start_day" value = "<%= "#{@histroy.start_day.to_s(:datetime_to_date) if @histroy.start_day}" %>">
+                <p>終了日</p>
+                <input type = "date" name="end_day" value = "<%= "#{@histroy.end_day.to_s(:datetime_to_date) if @histroy.end_day}" %>">
+                <p>予約人数</p>
+                <input type = "number" name = "count" min = 1 value = "<%= "#{@histroy.count}" %>">
+                <input name = "room_id" type = "hidden" value = <%= @room.id %>>
+                <input class = "form-button" type = "submit" value = "予約する">
+            <% end %>
+        <% else %>
+            <p><%= link_to "ログイン", "/users/login_form", class:"rooms-show-link"%></p>
+        <% end %>
+    </div>
+</div>

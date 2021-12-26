@@ -1,0 +1,13 @@
+<h3 class = "rooms-index-h3">検索結果：<%= @room.size %>件</h3>
+<div class = "rooms-index">
+    <% @room.each do |room| %>
+        <div class = "rooms-index-room">
+            <%= link_to("/rooms/show/#{room.id}") do %>
+                <img src = "<%= "/room_images/#{room.image}" %>">
+                <p><%= room.name %></p>
+                <p><%= room.address %></p>
+                <p class = "rooms-index-money">¥ <%= room.money %></p>
+            <% end %>
+        </div>
+    <% end %>
+</div>

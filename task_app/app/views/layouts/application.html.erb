@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ルーム登録</title>
+    <meta name = "viewport" content = "width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class = "header-main">
+        <h1><%= link_to "ホーム","/" %></h1>
+        <%= form_with url: "/rooms", method: :get do %>
+          <input class = "header-input" name = "address" placeholder="エリア" >
+          <input class = "header-input" name = "appeal" placeholder="キーワード" >
+          <input class = "header-submit" type = "submit" value="検索">
+        <% end %>
+        <% if @current_user %>
+          <p class = "header-user-name"><%= @current_user.name %></p>
+          <div>
+            <input id = "acd-check1" class = "acd-check" type = "checkbox">
+            <label class = "acd-label" for = "acd-check1">
+              <img src = "<%= "/user_images/#{@current_user.image}" %>">
+            </label>
+            <div class="acd-content">
+              <p><%= link_to "ルーム登録","/rooms/new" %></p>
+              <p><%= link_to "予約済みルーム一覧","/histroys" %></p>
+              <p><%= link_to "登録済みルーム一覧","/rooms/posts" %></p>
+              <p><%= link_to "アカウント設定","/users/edit" %></p>
+              <p><%= link_to "ログアウト","/users/logout", {method:"post"} %></p>
+            </div>
+          </div>
+        <% else %>
+          <p class = "login"><%= link_to "ログイン","/users/login_form", {class: "header-link"} %></p>
+          <p class = "new"><%= link_to "登録する","/users/new", {class: "header-link"} %></p>
+        <% end %>
+      </div>
+      <% if flash[:notice] %>
+        <p class = "flash"><%= flash[:notice] %></p>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

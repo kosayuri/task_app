@@ -1,0 +1,30 @@
+<div class = "form-new">
+    <h3 class = "form-h3">アカウントを更新</h3>
+    <div class = "form-error">
+        <ul>
+            <% @user.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+            <% if @error_message %>
+                <li><%= @error_message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <%= form_with url: "/users/update", multipart: true do %>
+        <div class = "form">
+            <p>メールアドレス</p>
+            <input name = "email" placeholder = "メールアドレス" value = "<%= @user.email %>">
+            <p>パスワード</p>
+            <input name = "password" type = "password" placeholder = "パスワード(変更時のみ入力)" value = "<%= @user.password %>">
+            <p>パスワード確認</p>
+            <input name = "password_confirmation" type = "password" placeholder = "パスワード確認(変更時のみ入力)" value = "<%= @password_confirmation %>">
+            <p>ユーザー名前</p>
+            <input name = "name" placeholder = "ユーザー名前" value = "<%= @user.name %>">
+            <p>自己紹介を入力</p>
+            <textarea name = "appeal"  placeholder = "自己紹介を入力"><%= @user.appeal %></textarea>
+            <p>アイコン画像</p>
+            <input name = "image" placeholder = "アイコン画像"  type = "file">
+            <input class = "form-button" type = "submit" value = "更新">
+        </div>
+    <% end %>
+</div>

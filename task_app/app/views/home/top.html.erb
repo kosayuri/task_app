@@ -1,0 +1,14 @@
+<div class = "top">
+    <h2>エリヤ検索</h2>
+    <%= form_with url: "/rooms/index", method: :get do %>
+        <input class = "top-search" name = "address" placeholder = "東京" >
+        <div class = "div-top-button">
+            <input class = "top-button" type = "submit" value = "検索">
+        </div>
+    <% end %>
+    <div class = "div-top-search-link">
+        <% @address.each do |address| %>
+            <%= link_to(address,"/rooms/index/#{address}", class:"top-search-link") %>
+        <% end %>
+    </div>
+</div>

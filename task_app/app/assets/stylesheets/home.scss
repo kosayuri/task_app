@@ -1,0 +1,139 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+    box-sizing:border-box;
+    word-break: break-all;
+}
+  
+html, body, label,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+    margin: 0;
+    padding: 0;
+}
+  
+header h1{
+    padding-right: 30px;
+}
+
+.header-main{
+    display: flex;
+    padding: 0 50px;
+    height: 70px;
+    align-items: center;
+    background-color: #9a8;
+}
+
+img {
+    object-fit: cover;
+}
+  
+.acd-check{
+    display: none;
+}
+
+.acd-label{
+    color: #fff;
+    display: block;
+    cursor: pointer;
+}
+
+.header-user-name{
+    margin-left: auto;
+    color:  #fff;
+    font-size: 40px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.acd-label img{
+    width: auto;
+    height: 50px;
+}
+
+.acd-content{
+    display: none;
+    position: absolute;
+    right: 50px;
+    background-color: #AAA;
+}
+
+.acd-check:checked + .acd-label + .acd-content{
+    display: block;
+}
+
+.header-input{
+height: 40px;
+font-size: 20px;
+}
+
+.header-submit{
+    display: none;
+}
+
+.login{
+    background-color: rgb(38, 77, 207);
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.new{
+    background-color: rgb(112, 112, 112);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.header-link{
+    color: #fff;
+}
+
+.flash{
+    background-color: rgb(199, 64, 64);
+    padding: 10px 0;
+    padding-left: 50px
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2{
+    padding: 20px 0;
+}
+.top-search{
+    font-size: 30px;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 50px;
+}
+
+.top-button{
+    font-size: 30px;
+    margin: 0 auto;
+    width: 300px;
+    background-color: rgb(68, 183, 236);
+    cursor: pointer;
+}
+
+.div-top-button{
+    margin-top: 10px;
+}
+
+.div-top-search-link{
+    margin-top: 20px;
+}
+
+.top-search-link{
+    background-color: rgb(130, 238, 97);
+    font-size: 60px;
+    padding: 20px 30px;
+}
